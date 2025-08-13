@@ -16,11 +16,11 @@ const PartnersSection = () => {
         <h2
           className="mb-12 text-center text-4xl font-extrabold leading-tight 
         text-gray-900 dark:text-gray-100 
-        md:text-5xl md:leading-snug
+        md:text-6xl md:leading-snug
         select-none
       "
         >
-          All Partners
+          ALL PARTNERS
         </h2>
         <p className="text-center text-xl">
           We&apos;re proud to partner with industry leaders who share our vision

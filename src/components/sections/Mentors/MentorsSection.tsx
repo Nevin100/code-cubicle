@@ -1,4 +1,4 @@
-import { TwitterIcon, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -65,18 +65,17 @@ const MentorsSection = () => {
   return (
     <div className="flex flex-col justify-center py-8 sm:py-16 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
       <div className="text-center max-w-2xl mx-auto">
-        <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
-          Our Mentors
+        <h2 className="mt-12 mb-12 text-4xl md:text-6xl sm:text-5xl font-bold">
+          MENTORS
         </h2>
         <p className="mt-6 text-base sm:text-lg"></p>
-        <div className="mt-8 flex flex-col sm:flex-row-reverse sm:justify-center gap-3"></div>
       </div>
 
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-12">
         {teamMembers.map((member) => (
           <div
             key={member.name}
-            className="flex flex-col items-center text-center bg-accent py-8 px-6 rounded-lg"
+            className="relative flex flex-col items-center text-center bg-accent py-8 px-6 rounded-lg overflow-hidden"
           >
             <Image
               src={member.imageUrl}
@@ -90,11 +89,15 @@ const MentorsSection = () => {
             <p className="mt-2 mb-6">{member.bio}</p>
             <div className="mt-auto flex items-center gap-4">
               <Link href="#" target="_blank">
-                <TwitterIcon className="stroke-muted-foreground h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
                 <Linkedin className="stroke-muted-foreground h-5 w-5" />
               </Link>
+            </div>
+
+            {/* Blur overlay */}
+            <div className="absolute inset-0 bg-white/50 dark:bg-black/50 backdrop-blur-md flex items-center justify-center">
+              <span className="text-black dark:text-white font-bold text-lg">
+                Mentors will be unlocked soon 😊
+              </span>
             </div>
           </div>
         ))}

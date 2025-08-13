@@ -1,7 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-
 import ClientWrapper from "@/components/ClientWrapper";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
@@ -31,14 +29,11 @@ const AboutSection = () => {
             <div className="flex items-center justify-center px-6">
               {/* Left Content */}
               <div className="relative z-10 text-center max-w-2xl mx-auto">
-                <Badge className="bg-gradient-to-br via-70% from-primary via-muted/30 to-primary rounded-full py-1 border-none">
-                  Just released v1.0.0
-                </Badge>
-                <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] ">
+                <h1 className="mt-6 text-4xl sm:text-5xl md:text-7xl font-bold !leading-[1.2] ">
                   CODE CUBICLE - 5.0
                 </h1>
 
-                <p className="mt-6 text-[17px] md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p className="mt-6 text-[25px] md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   CodeCubicle is a hub for{" "}
                   <strong className="font-semibold text-gray-900 dark:text-gray-100">
                     innovation, collaboration, and technological advancement.

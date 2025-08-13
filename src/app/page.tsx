@@ -3,11 +3,11 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import AboutSection from "@/components/sections/AboutSection/AboutSection";
 import PartnersSection from "@/components/sections/Partners/PartnersSection";
-import TimelineSection from "@/components/sections/TimelineSection";
+import TimelineSection from "@/components/sections/TimelineSection/TimelineSection";
 import ProblemStatementsSection from "@/components/sections/ProblemStatements/ProblemStatementsSection";
 import MentorsSection from "@/components/sections/Mentors/MentorsSection";
-import SponsorsSection from "@/components/sections/SponsorsSection";
-import ContactSection from "@/components/sections/ContactSection";
+import SponsorsSection from "@/components/sections/SponsersSection/SponsorsSection";
+import ContactSection from "@/components/sections/ContactSection/ContactSection";
 
 export const metadata: Metadata = {
   title: "CodeCubicle - Innovation Hub",
@@ -19,6 +19,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <AboutSection />
+      <div className="flex items-center justify-evenly mt-10 gap-[-5px] max-w-7xl mx-auto"></div>
       <PartnersSection />
       <TimelineSection />
       <ProblemStatementsSection />

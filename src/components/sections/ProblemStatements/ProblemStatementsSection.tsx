@@ -91,17 +91,17 @@ const ProblemStatement = () => {
       className="py-12 h-fit grid grid-rows-[auto_1fr_auto]"
     >
       <h2
-        className="mb-12 text-center text-4xl font-extrabold leading-tight 
+        className="mb-12 mt-12 text-center text-4xl font-extrabold leading-tight 
         text-gray-900 dark:text-gray-100 
-        md:text-5xl md:leading-snug
+        md:text-6xl md:leading-snug
         select-none
       "
       >
-        Problem Statements
+        PROBLEM STATEMENTS
       </h2>
 
-      <div className="max-w-8xl px-4 py-[2.5rem] h-fit grid grid-cols-1 md:grid-cols-[50px_1fr_50px] gap-2">
-        <div className="hidden md:flex md:items-center">
+      <div className="max-w-7xl px-4 py-[2.5rem] h-fit grid grid-cols-1 md:grid-cols-[50px_1fr_50px] gap-2 ">
+        <div className="hidden md:flex md:items-center ">
           <button
             onClick={goToPrev}
             className="bg-white/60 border border-black/10 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
@@ -124,17 +124,20 @@ const ProblemStatement = () => {
             onTouchStart={stopAutoChange}
             onTouchEnd={startAutoChange}
           >
-            <CarouselContent className="h-full flex items-center md:ml-[-5.1rem]">
+            <CarouselContent className="h-full flex items-center md:max-w-6xl md:ml-[2rem]">
               {problemStatements.map((statement, index) => (
-                <CarouselItem key={index} className="lg:basis-4/5 xl:basis-2/5">
+                <CarouselItem
+                  key={index}
+                  className="basis-full sm:basis-3/4 md:basis-2/3 lg:basis-2/5 xl:basis-3/5 max-w-[485px] mx-auto"
+                >
                   <div
-                    className={`transition-all duration-300 rounded-lg shadow-lg  ${
+                    className={`transition-all duration-300 rounded-lg shadow-lg ${
                       index === current
                         ? "scale-100 opacity-100"
                         : "scale-90 opacity-30"
                     }`}
                   >
-                    <div className=" overflow-hidden rounded-lg shadow-lg">
+                    <div className="overflow-hidden rounded-lg shadow-lg">
                       <CardContent {...statement} className="h-full" />
                     </div>
                   </div>
@@ -144,7 +147,7 @@ const ProblemStatement = () => {
           </Carousel>
         </div>
 
-        <div className="hidden md:flex md:items-center">
+        <div className="hidden md:flex md:items-center ">
           <button
             onClick={goToNext}
             className="bg-white/60 border border-accent/10 rounded-full h-fit p-2 shadow-md z-50 hidden md:block"

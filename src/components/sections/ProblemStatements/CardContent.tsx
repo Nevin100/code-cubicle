@@ -1,5 +1,6 @@
 interface CardContentProps extends ProblemStatement {
   className?: string;
+  locked?: boolean; // new prop to mark locked state
 }
 
 interface ProblemStatement {
@@ -17,10 +18,12 @@ export const CardContent = ({
   Statement,
   Submission,
   className,
+  locked = true,
 }: CardContentProps) => (
   <div
-    className={`${className} overflow-clip bg-secondary dark:bg-gray-800 rounded-3xl px-6 py-6 grid grid-rows-[auto_auto_auto_1fr] sm:gap-3 md:gap-5 shadow-lg dark:shadow-black/50 transition-colors duration-300`}
+    className={`${className} relative overflow-clip bg-secondary dark:bg-gray-800 rounded-3xl px-6 py-6 grid grid-rows-[auto_auto_auto_1fr] sm:gap-3 md:gap-5 shadow-lg dark:shadow-black/50 transition-colors duration-300`}
   >
+    {/* Actual Card Content */}
     <h4 className="font-bold text-lg md:text-xl xl:text-2xl italic tracking-wide relative overflow-hidden group flex justify-center items-center text-gray-900 dark:text-gray-100">
       <span className="group-hover:opacity-0 opacity-100 transition-all duration-300">
         Problem
@@ -70,5 +73,16 @@ export const CardContent = ({
         {Submission}
       </a>
     </p>
+
+    {/* Locked Overlay */}
+    {locked && (
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex flex-col justify-center items-center text-center text-white rounded-3xl">
+        <span className="text-3xl mb-2">🔒</span>
+        <p className="text-lg font-semibold text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 transition-colors duration-300 ml-1 underline truncate ">
+          Locked
+        </p>
+        <p className="text-md opacity-90">Will be unlocked soon 😊</p>
+      </div>
+    )}
   </div>
 );
