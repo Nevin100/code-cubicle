@@ -45,7 +45,10 @@ const Sponsors = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white dark:bg-black">
-      <h1 className="md:text-6xl mt-12 font-bebas text-4xl text-pink font-bold mb-12 text-center">
+      <h1
+        id="sponsors"
+        className="md:text-6xl mt-12 font-bebas text-4xl text-pink font-bold mb-12 text-center"
+      >
         SPONSORS
       </h1>
 
@@ -54,7 +57,7 @@ const Sponsors = () => {
           key={category}
           className="w-full max-w-6xl px-4 sm:px-6 mb-12 flex flex-col items-center"
         >
-          <h2 className="text-4xl sm:text-5xl font-bebas text-pink mb-6 text-center">
+          <h2 className="text-4xl sm:text-5xl font-bebas font-bold  mb-6 text-center">
             {formatCategoryName(category)}
           </h2>
           <div

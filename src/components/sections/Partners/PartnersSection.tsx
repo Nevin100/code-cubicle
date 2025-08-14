@@ -11,7 +11,10 @@ import {
 
 const PartnersSection = () => {
   return (
-    <div className="md:mt-16 md:mb-13 flex items-center justify-center px-6">
+    <div
+      className="md:mt-16 md:mb-13 flex items-center justify-center px-6"
+      id="partners"
+    >
       <div>
         <h2
           className="mb-12 text-center text-4xl font-extrabold leading-tight 

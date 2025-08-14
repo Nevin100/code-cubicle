@@ -89,6 +89,7 @@ const ProblemStatement = () => {
     <div
       ref={containerRef}
       className="py-12 h-fit grid grid-rows-[auto_1fr_auto]"
+      id="problem-statements"
     >
       <h2
         className="mb-12 mt-12 text-center text-4xl font-extrabold leading-tight 

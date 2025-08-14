@@ -24,7 +24,10 @@ const changelog = [
 
 export default function Timeline() {
   return (
-    <div className="max-w-screen-sm md:mx-auto py-12 md:py-20 px-6">
+    <div
+      className="max-w-screen-sm md:mx-auto py-12 md:py-20 px-6"
+      id="timeline"
+    >
       {/* Title */}
       <h2
         className="mb-12 mt-12 text-center text-4xl font-extrabold leading-tight 

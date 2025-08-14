@@ -63,7 +63,10 @@ const teamMembers = [
 
 const MentorsSection = () => {
   return (
-    <div className="flex flex-col justify-center py-8 sm:py-16 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
+    <div
+      className="flex flex-col justify-center py-8 sm:py-16 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16"
+      id="mentors"
+    >
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="mt-12 mb-12 text-4xl md:text-6xl sm:text-5xl font-bold">
           MENTORS

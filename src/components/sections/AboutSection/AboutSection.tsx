@@ -6,7 +6,10 @@ import { cn } from "@/lib/utils";
 
 const AboutSection = () => {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden md:mt-[-6rem] py-16">
+    <div
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden md:mt-[-6rem] py-16"
+      id="about"
+    >
       {/* Animated Background */}
       <AnimatedGridPattern
         numSquares={30}
