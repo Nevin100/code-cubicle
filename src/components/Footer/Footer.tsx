@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../Navbar/logo";
-
 // Footer component for the application ::
 const footerLinks = [
   { title: "About", href: "#about" },
