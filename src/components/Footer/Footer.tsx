@@ -1,12 +1,8 @@
 import { Separator } from "@/components/ui/separator";
-import {
-  DribbbleIcon,
-  GithubIcon,
-  TwitchIcon,
-  TwitterIcon,
-} from "lucide-react";
+import { Instagram, Link2Icon, Linkedin, TwitterIcon } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../Navbar/logo";
+import { FaWhatsapp } from "react-icons/fa";
 // Footer component for the application ::
 const footerLinks = [
   { title: "About", href: "#about" },
@@ -45,7 +41,7 @@ const Footer = () => {
           <Separator />
 
           <div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-y-5 gap-x-4 text-center sm:text-left">
-            {/* Copyright */}
+            {/* Copyright and icons */}
             <span className="text-xs sm:text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
@@ -54,18 +50,30 @@ const Footer = () => {
               . All rights reserved.
             </span>
 
-            <div className="flex items-center justify-center gap-5 text-muted-foreground hover:text-black">
-              <Link href="#" target="_blank">
+            <div className="flex items-center justify-center gap-5 text-muted-foreground hover:text-pink-400 transition-colors">
+              <Link href="https://twitter.com/geek__room_" target="_blank">
                 <TwitterIcon className="h-5 w-5" />
               </Link>
-              <Link href="#" target="_blank">
-                <DribbbleIcon className="h-5 w-5" />
+              <Link
+                href="https://www.linkedin.com/company/geekr00m/"
+                target="_blank"
+              >
+                <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="#" target="_blank">
-                <TwitchIcon className="h-5 w-5" />
+              <Link
+                href="https://www.instagram.com/_geek.room/"
+                target="_blank"
+              >
+                <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" target="_blank">
-                <GithubIcon className="h-5 w-5" />
+              <Link href="https://www.geekroom.in/" target="_blank">
+                <Link2Icon className="h-5 w-5" />
+              </Link>
+              <Link
+                href="https://www.whatsapp.com/channel/0029ValJ6es4IBhI3QakxH21"
+                target="_blank"
+              >
+                <FaWhatsapp className="h-5 w-5" />
               </Link>
             </div>
           </div>
