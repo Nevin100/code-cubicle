@@ -8,6 +8,7 @@ import ProblemStatementsSection from "@/components/sections/ProblemStatements/Pr
 import MentorsSection from "@/components/sections/Mentors/MentorsSection";
 import SponsorsSection from "@/components/sections/SponsersSection/SponsorsSection";
 import ContactSection from "@/components/sections/ContactSection/ContactSection";
+import FAQSection from "@/components/sections/FAQSection/FAQSection";
 
 export const metadata: Metadata = {
   title: "CodeCubicle - Innovation Hub",
@@ -26,6 +27,7 @@ export default function Home() {
       <MentorsSection />
       <SponsorsSection />
       <ContactSection />
+      <FAQSection />
       <Footer />
     </main>
   );

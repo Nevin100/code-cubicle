@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Sponsors = () => {
   const categories = {
@@ -43,36 +46,69 @@ const Sponsors = () => {
     { src: "/assets/webForge.png" },
   ];
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1, duration: 0.5 },
+    }),
+    hover: { scale: 1.05, transition: { duration: 0.3 } },
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white dark:bg-black">
-      <h1
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6">
+      {/* Main Sponsors Heading */}
+      <motion.h1
         id="sponsors"
-        className="md:text-6xl mt-12 font-bebas text-4xl text-pink font-bold mb-12 text-center"
+        className="md:text-6xl mt-16 mb-16 font-bebas text-4xl text-pink font-bold text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        variants={headingVariants}
       >
         SPONSORS
-      </h1>
+      </motion.h1>
 
       {Object.entries(categories).map(([category, sponsors]) => (
         <div
           key={category}
-          className="w-full max-w-6xl px-4 sm:px-6 mb-12 flex flex-col items-center"
+          className="w-full max-w-6xl mb-16 flex flex-col items-center"
         >
-          <h2 className="text-4xl sm:text-5xl font-bebas font-bold  mb-6 text-center">
+          <motion.h2
+            className="text-4xl sm:text-5xl font-bebas font-bold mb-8 mt-8 text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            variants={headingVariants}
+          >
             {formatCategoryName(category)}
-          </h2>
+          </motion.h2>
+
           <div
             className={`flex flex-wrap justify-center ${
               sponsors.length === 1 ? "items-center w-full" : "gap-4 sm:gap-6"
             }`}
           >
             {sponsors.map((sponsor, index) => (
-              <div
+              <motion.div
                 key={index}
                 className={`relative rounded-3xl overflow-hidden shadow-lg ${
                   sponsors.length === 1
                     ? "w-full h-56 sm:w-96"
                     : "h-56 w-[45%] sm:w-80"
                 }`}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+                whileHover="hover"
+                variants={cardVariants}
               >
                 <a
                   href={sponsor.url || "#"}
@@ -83,7 +119,7 @@ const Sponsors = () => {
                   <img
                     src={sponsor.src}
                     alt={`${category} Sponsor ${index + 1}`}
-                    className="w-full p-5 h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
+                    className="w-full p-5 h-full object-contain"
                   />
                   <div className="absolute inset-0 bg-white/50 dark:bg-black/50 backdrop-blur-md flex items-center justify-center">
                     <span className="text-black dark:text-white font-bold text-lg">
@@ -91,35 +127,48 @@ const Sponsors = () => {
                     </span>
                   </div>
                 </a>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       ))}
 
-      <h1 className="md:text-6xl font-bebas text-4xl text-pink font-bold mb-12 text-center mt-14">
+      {/* Partners Section */}
+      <motion.h1
+        className="md:text-6xl font-bebas text-4xl text-pink font-bold mb-16 mt-16 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        variants={headingVariants}
+      >
         PARTNERS
-      </h1>
+      </motion.h1>
 
-      <div className="flex flex-wrap justify-center items-center mb-12 gap-4">
+      <div className="flex flex-wrap justify-center items-center mb-16 gap-4">
         {partners.map((partner, index) => (
-          <div
+          <motion.div
             key={index}
             className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-lg overflow-hidden flex items-center justify-center m-2 md:m-4 h-44 md:h-56 w-[calc(50%-1rem)] sm:w-80"
+            custom={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            whileHover="hover"
+            variants={cardVariants}
           >
             <Image
               src={partner.src}
               height={200}
               width={200}
               alt={`partner ${index + 1}`}
-              className="w-full p-3 md:p-5 h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
+              className="w-full p-3 md:p-5 h-full object-contain"
             />
             <div className="absolute inset-0 bg-white/50 dark:bg-black/50 backdrop-blur-md flex items-center justify-center">
               <span className="text-black dark:text-white font-bold text-lg">
                 Partners will be unlocked soon 😊
               </span>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

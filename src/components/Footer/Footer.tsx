@@ -7,12 +7,12 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../Navbar/logo";
-
+// Footer component for the application ::
 const footerLinks = [
   { title: "About", href: "#about" },
   { title: "Partners", href: "#partners" },
   { title: "Timeline", href: "#timeline" },
-  { title: "Problems", href: "#problems" },
+  { title: "Problems", href: "#problems-statements" },
   { title: "Mentors", href: "#mentors" },
   { title: "Sponsors", href: "#sponsors" },
   { title: "Contact", href: "#contact" },
