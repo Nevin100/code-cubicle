@@ -23,17 +23,17 @@ const Footer = () => {
     <div className="flex flex-col">
       <div className="grow bg-muted" />
       <footer>
-        <div className="max-w-screen-xl mx-auto">
-          <div className="py-12 flex flex-col justify-start items-center">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
+          <div className="py-12 flex flex-col justify-start items-center text-center sm:text-left">
             {/* Logo */}
             <Logo />
 
-            <ul className="mt-6 flex items-center gap-4 flex-wrap">
+            <ul className="mt-6 flex flex-wrap justify-center sm:justify-start items-center gap-3 sm:gap-4">
               {footerLinks.map(({ title, href }) => (
                 <li key={title}>
                   <Link
                     href={href}
-                    className="flex text-muted-foreground hover:text-foreground font-medium gap-4"
+                    className="text-sm sm:text-base text-muted-foreground hover:text-foreground font-medium"
                   >
                     {title}
                   </Link>
@@ -41,10 +41,12 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+
           <Separator />
-          <div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0">
+
+          <div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-y-5 gap-x-4 text-center sm:text-left">
             {/* Copyright */}
-            <span className="text-muted-foreground">
+            <span className="text-xs sm:text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
                 Code Cubicle-5.0 GeekRoom Community
@@ -52,7 +54,7 @@ const Footer = () => {
               . All rights reserved.
             </span>
 
-            <div className="flex items-center gap-5 text-muted-foreground hover:text-black">
+            <div className="flex items-center justify-center gap-5 text-muted-foreground hover:text-black">
               <Link href="#" target="_blank">
                 <TwitterIcon className="h-5 w-5" />
               </Link>
