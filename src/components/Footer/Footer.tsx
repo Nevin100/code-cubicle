@@ -41,7 +41,7 @@ const Footer = () => {
           <Separator />
 
           <div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-y-5 gap-x-4 text-center sm:text-left">
-            {/* Copyright */}
+            {/* Copyright and icons */}
             <span className="text-xs sm:text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
