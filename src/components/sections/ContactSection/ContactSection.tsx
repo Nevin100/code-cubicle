@@ -2,7 +2,7 @@ import { MailIcon } from "lucide-react";
 import Link from "next/link";
 
 const ContactSection = () => (
-  <div className="min-h-screen flex items-center justify-center">
+  <div className=" flex items-center justify-center">
     <div className="text-center">
       <h2
         className="mb-12 mt-12 text-center text-4xl font-extrabold leading-tight 
