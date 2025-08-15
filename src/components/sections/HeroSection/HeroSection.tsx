@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <main
       id="hero"
-      className={`min-h-screen px-6 md:px-32 py-16 grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 items-center transition-colors duration-300 ${textColor}`}
+      className={`min-h-screen sm:mt-14 px-6 md:px-32 py-16 grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 items-center transition-colors duration-300 ${textColor}`}
     >
       {/* LEFT SIDE */}
       <div
