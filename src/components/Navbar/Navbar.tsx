@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
 import { ModeToggle } from "../ModeToggle";
-import { useTheme } from "next-themes";
+
 
 export type PillNavItem = {
   label: string;
@@ -12,8 +12,7 @@ export type PillNavItem = {
 };
 
 export interface PillNavProps {
-  logo: string;
-  logoAlt?: string;
+
   items: PillNavItem[];
   activeHref?: string;
   className?: string;
@@ -27,8 +26,7 @@ export interface PillNavProps {
 }
 
 const Navbar: React.FC<PillNavProps> = ({
-  logo,
-  logoAlt = "Logo",
+
   items,
   activeHref,
   className = "",
@@ -36,7 +34,7 @@ const Navbar: React.FC<PillNavProps> = ({
   onMobileMenuClick,
   initialLoadAnimation = true,
 }) => {
-  const { resolvedTheme } = useTheme();
+
 
   // Set colors based on resolvedTheme
   // Use theme CSS variables for all colors
@@ -44,13 +42,12 @@ const Navbar: React.FC<PillNavProps> = ({
   const pillColor = "var(--card)";
   const hoveredPillTextColor = "var(--primary)";
   const pillTextColor = "var(--foreground)";
-  const resolvedPillTextColor = pillTextColor ?? baseColor;
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const circleRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const tlRefs = useRef<Array<gsap.core.Timeline | null>>([]);
   const activeTweenRefs = useRef<Array<gsap.core.Tween | null>>([]);
-  const logoImgRef = useRef<HTMLImageElement | null>(null);
-  const logoTweenRef = useRef<gsap.core.Tween | null>(null);
+
   const hamburgerRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const navItemsRef = useRef<HTMLDivElement | null>(null);
@@ -181,18 +178,7 @@ const Navbar: React.FC<PillNavProps> = ({
     });
   };
 
-  const handleLogoEnter = () => {
-    const img = logoImgRef.current;
-    if (!img) return;
-    logoTweenRef.current?.kill();
-    gsap.set(img, { rotate: 0 });
-    logoTweenRef.current = gsap.to(img, {
-      rotate: 360,
-      duration: 0.2,
-      ease,
-      overwrite: "auto",
-    });
-  };
+
 
   const toggleMobileMenu = () => {
     const newState = !isMobileMenuOpen;

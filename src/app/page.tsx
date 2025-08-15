@@ -32,8 +32,7 @@ export default function Home() {
         />
       </div>
       <Navbar
-        logo="/assets/GRLogo.png"
-        logoAlt="Company Logo"
+
         items={[
           { label: "Home", href: "#hero" },
           { label: "Partners", href: "#partners" },
