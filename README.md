@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Code Cubicle 5.0
 
-## Getting Started
+> **Everything you need to know about India’s flagship hybrid hackathon!**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🏢 Venue
+**Microsoft Office, Bangalore**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📅 Important Dates
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Event | Date & Time |
+|-------|------------|
+| Registration Deadline | 20 Aug 2025, 12:00 AM IST |
+| Online Qualifier | 14 Sep 2025, 06:00 PM IST (Google Meet) |
+| Online Round Result | 16 Sep 2025, 11:59 PM IST |
+| Offline Grand Finale | 27 Sep 2025, 08:30 AM IST (Microsoft Office, Bangalore) |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ❓ What is Code Cubicle?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Code Cubicle** is **Geek Room’s flagship hybrid hackathon series** that brings together the brightest young innovators from across India to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Solve real-world challenges
+- Build groundbreaking solutions
+- Pitch ideas to top industry leaders  
 
-## Deploy on Vercel
+Backed by **industry partners and tech giants**, past editions have seen **20,000+ registrations**, with finales hosted at **Mastercard** and **Microsoft** offices.  
+The **5th edition** promises to be bigger, better, and more impactful than ever!  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🏆 Organized by Geek Room
+
+**Geek Room** is one of India’s fastest-growing tech communities with **100,000+ developers**.  
+
+Focus areas:
+
+- National-level Hackathons & Hire-a-thons  
+- Tech-for-good projects for companies  
+- Startup programs, grants, and incubation  
+- Campus chapter establishment & growth across India  
+
+---
+
+## ⚡ Format – Simple, Challenging & Impactful
+
+### **Online Round** – 14th September 2025
+- 250 shortlisted teams  
+- Pitch **live via Google Meet** (5-min pitch + 2-min Q&A)  
+
+### **Offline Grand Finale** – 27th September 2025
+- Top 15 teams travel to **Microsoft Office, Bangalore**  
+- 8-hour on-site hackathon  
+- Solve real-world problems & present live to the jury  
+- Travel reimbursement not provided  
+
+---
+
+## 👥 Team Guidelines
+
+- Team size: **1–4 members**  
+- Inter-college teams allowed  
+- Inter-specialization teams allowed  
+- Submissions must be **original and created during the hackathon**  
+- Projects must follow provided **problem statements/themes**  
+
+---
+
+## 🎁 What’s in it for You?
+
+- Prize pool worth **₹20 Lakhs+**  
+- Cash prizes revealed soon!  
+- **Internships & PPO opportunities** from partner companies  
+- Grants, credits, and cloud sponsorships for top teams  
+- Swags & goodies for all finalists  
+- Unlimited food, snacks & beverages  
+- Pitch in front of **top tech recruiters & founders**  
+- Fast-tracked access to hiring & incubation programs  
+
+---
+
+## 📜 Rules
+
+- All code must be written **during the hackathon**  
+- Open-source libraries permitted unless restricted  
+- **No plagiarism** or previous projects allowed  
+- Participants must adhere to **all event guidelines**  
+- Judges’ decisions are final  
+
+> **Bring your ideas. Build your future.**  
+> See you at **Code Cubicle 5.0 – where code meets opportunity**  
+
+---
+
+## 📞 Contact the Organisers
+
+**Geek Room**  
+✉️ Email: [community@geekroom.in](mailto:community@geekroom.in)  
+
+---
+
+## 🔗 Registration
+
+[Click here to Register](https://unstop.com/hackathons/code-cubicle-5-geek-room-1537583)
+
+---
+
+### ⚡ Stay Connected
+
+Follow us on social media for updates:  
+
+- Twitter: [@GeekRoom](https://twitter.com/GeekRoom)  
+- LinkedIn: [Geek Room](https://www.linkedin.com/company/geekroom)  
+- Instagram: [@geekroom](https://www.instagram.com/geekroom)
+
+---
+
+Made with ❤️ by **Geek Room Team**

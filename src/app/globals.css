@@ -120,3 +120,36 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  @keyframes scroll-ltr {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes scroll-rtl {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-scroll-ltr {
+    animation: scroll-ltr 20s linear infinite;
+  }
+  .animate-scroll-rtl {
+    animation: scroll-rtl 20s linear infinite;
+  }
+}
+
+/* Hide scrollbar globally but keep scroll functionality */
+html, body {
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE and Edge */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
+}

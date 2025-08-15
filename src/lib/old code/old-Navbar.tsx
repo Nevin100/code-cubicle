@@ -7,15 +7,15 @@
 // const Navbar = () => {
 //   const [isOpen, setIsOpen] = useState(false);
 
-//   const navItems = [
-//     { name: 'About', href: '#about' },
-//     { name: 'Partners', href: '#partners' },
-//     { name: 'Timeline', href: '#timeline' },
-//     { name: 'Problems', href: '#problems' },
-//     { name: 'Mentors', href: '#mentors' },
-//     { name: 'Sponsors', href: '#sponsors' },
-//     { name: 'Contact', href: '#contact' },
-//   ];
+  const navItems = [
+    { name: 'About', href: '#about' },
+    { name: 'Partners', href: '#partners' },
+    { name: 'Timeline', href: '#timeline' },
+    { name: 'Problems', href: '#problems' },
+    { name: 'Mentors', href: '#mentors' },
+    { name: 'Sponsors', href: '#sponsors' },
+    { name: 'Contact', href: '#contact' },
+  ];
 
 //   return (
 //     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 shadow-md">
