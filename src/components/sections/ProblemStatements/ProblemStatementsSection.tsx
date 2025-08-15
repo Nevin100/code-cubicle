@@ -104,7 +104,7 @@ const ProblemStatement = () => {
   return (
     <div
       ref={containerRef}
-      className="py-12 h-fit grid grid-rows-[auto_1fr_auto]"
+      className="py-12 h-fit flex flex-col items-center"
       id="problem-statements"
     >
       <motion.h2
@@ -118,32 +118,31 @@ const ProblemStatement = () => {
         PROBLEM STATEMENTS
       </motion.h2>
 
-      <div className="max-w-8xl px-4 py-[2.5rem] h-fit grid grid-cols-1 md:grid-cols-[50px_1fr_50px] gap-2">
-        <div className="hidden md:flex md:items-center">
+      <div className="container mx-auto px-4 py-[2.5rem] h-fit">
+        <div className="relative flex items-center justify-center">
           <button
             onClick={goToPrev}
-            className="bg-white/60 border border-black/10 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
+            className="absolute left-0 bg-white/60 border border-black/10 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
             aria-label="Previous card"
           >
             <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-black" />
           </button>
-        </div>
 
-        <div className="flex justify-center items-center">
-          <Carousel
-            className="w-full h-full max-w-md lg:max-w-none"
-            setApi={setApi}
-            opts={{ align: "center", loop: true }}
-            onMouseEnter={stopAutoChange}
-            onMouseLeave={startAutoChange}
-            onTouchStart={stopAutoChange}
-            onTouchEnd={startAutoChange}
-          >
-            <CarouselContent className="h-full flex items-center md:max-w-6xl md:ml-[2rem]">
+          <div className="flex-1 flex justify-center items-center">
+            <Carousel
+              className="w-full h-full max-w-md lg:max-w-none"
+              setApi={setApi}
+              opts={{ align: "center", loop: true }}
+              onMouseEnter={stopAutoChange}
+              onMouseLeave={startAutoChange}
+              onTouchStart={stopAutoChange}
+              onTouchEnd={startAutoChange}
+            >
+              <CarouselContent className="h-full flex items-center justify-center">
               {problemStatements.map((statement, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-full sm:basis-3/4 md:basis-2/3 lg:basis-2/5 xl:basis-3/5 max-w-[485px] mx-auto"
+                  className="basis-full sm:basis-3/4 md:basis-2/3 lg:basis-1/2 xl:basis-1/2 max-w-[485px] px-4"
                 >
                   <motion.div
                     custom={index}
@@ -165,12 +164,11 @@ const ProblemStatement = () => {
               ))}
             </CarouselContent>
           </Carousel>
-        </div>
-
-        <div className="hidden md:flex md:items-center">
+          </div>
+          
           <button
             onClick={goToNext}
-            className="bg-white/60 border border-accent/10 rounded-full h-fit p-2 shadow-md z-50 hidden md:block"
+            className="absolute right-0 bg-white/60 border border-accent/10 rounded-full h-fit p-2 shadow-md z-50 hidden md:block"
             aria-label="Next card"
           >
             <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-black" />
