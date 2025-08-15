@@ -1,8 +1,9 @@
-"use client"
+/* eslint-disable @typescript-eslint/no-unused-vars */
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
-import { ModeToggle } from "../ModeToggle";
+
 import { useTheme } from "next-themes";
 
 export type PillNavItem = {
@@ -307,21 +308,24 @@ const Navbar: React.FC<PillNavProps> = ({
             width: "var(--nav-h)",
             height: "var(--nav-h)",
             background: "var(--card)",
-            transition: "background 0.3s"
+            transition: "background 0.3s",
           }}
         >
           <span
             className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms]"
-            style={{ background: "var(--foreground)", transition: "background 0.3s" }}
+            style={{
+              background: "var(--foreground)",
+              transition: "background 0.3s",
+            }}
           />
           <span
             className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms]"
-            style={{ background: "var(--foreground)", transition: "background 0.3s" }}
+            style={{
+              background: "var(--foreground)",
+              transition: "background 0.3s",
+            }}
           />
         </button>
-        <div className="flex-shrink-0">
-          <ModeToggle />
-        </div>
       </div>
       {/* Desktop nav */}
       <nav
@@ -428,9 +432,6 @@ const Navbar: React.FC<PillNavProps> = ({
             })}
           </ul>
           {/* ModeToggle for desktop */}
-          <div className="mx-2 flex items-center">
-            <ModeToggle />
-          </div>
         </div>
       </nav>
 
@@ -495,4 +496,3 @@ const Navbar: React.FC<PillNavProps> = ({
 };
 
 export default Navbar;
-
