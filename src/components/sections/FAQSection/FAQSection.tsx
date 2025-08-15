@@ -68,7 +68,7 @@ const FAQSection = () => {
   const [value, setValue] = useState<string>();
 
   return (
-    <div className="flex items-center justify-center px-6 py-12">
+    <div className="flex items-center justify-center px-6 py-12" id="faq">
       <div className="w-full max-w-screen-lg mx-auto md:mb-12 md:mt-12 mb-7">
         <motion.h2
           initial={{ opacity: 0, y: -15 }}

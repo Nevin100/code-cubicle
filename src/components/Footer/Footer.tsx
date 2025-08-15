@@ -1,17 +1,19 @@
 import { Separator } from "@/components/ui/separator";
 import { Instagram, Link2Icon, Linkedin, TwitterIcon } from "lucide-react";
 import Link from "next/link";
-import { Logo } from "../Navbar/logo";
+import { Logo } from "@/components/Navbar/logo";
 import { FaWhatsapp } from "react-icons/fa";
-
+//footer
 const footerLinks = [
   { title: "About", href: "#about" },
   { title: "Partners", href: "#partners" },
   { title: "Timeline", href: "#timeline" },
   { title: "Problems", href: "#problems-statements" },
+  { title: "Judges", href: "#judges" },
   { title: "Mentors", href: "#mentors" },
   { title: "Sponsors", href: "#sponsors" },
   { title: "Contact", href: "#contact" },
+  { title: "FAQ", href: "#faq" },
 ];
 
 const Footer = () => {

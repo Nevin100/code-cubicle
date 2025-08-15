@@ -1,33 +1,15 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { FaUser, FaEnvelopeOpenText } from "react-icons/fa";
 
 export default function Contact() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     team: "",
     message: "",
   });
-
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (headerRef.current) {
-        const rect = headerRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: (e.clientX - rect.left) / rect.width,
-          y: (e.clientY - rect.top) / rect.height,
-        });
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -46,29 +28,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative mx-auto w-full md:max-w-6xl py-10 md:py-16 px-4 md:px-8 lg:px-2 rounded-md"
-      style={{
-        background: `linear-gradient(135deg, transparent, #1a1a1a, transparent)`,
-      }}
+      className="relative mx-auto w-full md:max-w-6xl py-10 md:py-16 px-4 md:px-8 lg:px-2 rounded-md "
     >
-      {/* Glowing Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-purple-400 blur-3xl opacity-10"></div>
-        <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-pink-400 blur-3xl opacity-10"></div>
-      </div>
-
       <div className="container mx-auto max-w-3xl relative z-10 rounded min-h-[700px]">
-        <div
-          ref={headerRef}
-          className="relative rounded-3xl bg-zinc-900/20 backdrop-blur-lg shadow-2xl p-6 md:p-10"
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x * 100}% ${
-              mousePosition.y * 100
-            }%, rgba(192,132,252,0.12), rgba(236,72,153,0.06), rgba(135,206,235,0))`,
-          }}
-        >
+        <div className="relative rounded-3xl bg-zinc-900/40 backdrop-blur-lg shadow-2xl p-6 md:p-10">
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-black via-white to-transparent drop-shadow-md mb-10 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-md mb-10 text-center">
             Contact Us
           </h2>
 
@@ -142,7 +107,7 @@ export default function Contact() {
             {/* Submit Button */}
             <a
               href={createMailtoLink()}
-              className="bg-gradient-to-r from-black via-white to-transparent text-pink-500 font-bold py-4 text-lg md:text-xl rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 text-center"
+              className="bg-gradient-to-r from-black via-transparent to-black light:text-white dark:text-white-500 font-bold py-4 text-lg md:text-2xl rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 text-center"
             >
               Send Message
             </a>

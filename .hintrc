@@ -9,6 +9,8 @@
       {
         "label": "off"
       }
-    ]
+    ],
+    "button-type": "off",
+    "axe/aria": "off"
   }
 }
