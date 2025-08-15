@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   const leftRef = useRef<HTMLDivElement>(null);
-  const { resolvedTheme } = useTheme(); // Use resolvedTheme
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function HomePage() {
           </motion.div>
           <motion.div whileHover={{ scale: 1.08 }} className="flex flex-col">
             <span className={`text-4xl font-bold ${statTextColor}`}>
-              Microsoft Office - Bangaluru
+              Microsoft Office - Bengaluru
             </span>
             <span className={`text-sm ${statSubTextColor} text-left`}>
               Venue
