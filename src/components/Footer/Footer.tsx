@@ -3,7 +3,7 @@ import { Instagram, Link2Icon, Linkedin, TwitterIcon } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "@/components/Navbar/logo";
 import { FaWhatsapp } from "react-icons/fa";
-
+//footer
 const footerLinks = [
   { title: "About", href: "#about" },
   { title: "Partners", href: "#partners" },
