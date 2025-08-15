@@ -26,7 +26,7 @@ const changelog = [
 
 export default function TimelineSection() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center  p-4 pt-16 sm:p-8 md:pt-24">
+    <main className="flex min-h-screen w-full flex-col items-center  p-4 pt-16 sm:p-8 md:pt-24 md:mb-14">
       <div className="w-full max-w-4xl mx-auto">
         <header className="text-center mb-16 px-4">
           <h1 className="text-4xl md:text-6xl mt-6 font-bold text-primary mb-10 md:mb-12 font-headline">

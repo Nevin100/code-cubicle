@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
-
 import { useTheme } from "next-themes";
 
 export type PillNavItem = {

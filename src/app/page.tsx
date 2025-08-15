@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import TimelineSection from "@/components/sections/TimelineSection/TimelineSection";
 import FAQSection from "@/components/sections/FAQSection/FAQSection";
 import HeroSection from "@/components/sections/HeroSection/HeroSection";
+import JudgesSection from "@/components/sections/JudgesSection/JudgesSection";
 import Galaxy from "@/components/Extra/Background/Background";
 
 export const metadata: Metadata = {
@@ -39,9 +40,11 @@ export default function Home() {
           { label: "Partners", href: "#partners" },
           { label: "Timeline", href: "#timeline" },
           { label: "Problems", href: "#problems" },
+          { label: "Judges", href: "#judges" },
           { label: "Mentors", href: "#mentors" },
           { label: "Sponsors", href: "#sponsors" },
           { label: "Contact", href: "#contact" },
+          { label: "FAQs", href: "#faq" },
         ]}
         activeHref="/"
         className="custom-nav"
@@ -55,6 +58,7 @@ export default function Home() {
       <PartnersSection />
       <TimelineSection />
       <ProblemStatementsSection />
+      <JudgesSection />
       <MentorsSection />
       <SponsorsSection />
       <ContactSection />

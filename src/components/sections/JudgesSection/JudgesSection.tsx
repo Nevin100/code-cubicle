@@ -57,15 +57,15 @@ const items = [
   },
 ];
 
-const MentorsSection = () => {
+const JudgesSection = () => {
   return (
     <section
-      id="mentors"
+      id="judges"
       className="flex flex-col justify-center py-8 sm:py-16 px-6 lg:px-8 max-w-screen-xl mx-auto"
     >
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="mt-12 mb-12 md:mb-14 text-4xl md:text-6xl sm:text-6xl font-bold">
-          MENTORS
+          JUDGES
         </h2>
       </div>
 
@@ -83,4 +83,4 @@ const MentorsSection = () => {
   );
 };
 
-export default MentorsSection;
+export default JudgesSection;
