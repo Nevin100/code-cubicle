@@ -5,10 +5,17 @@ import { FaUser, FaEnvelopeOpenText } from "react-icons/fa";
 
 export default function Contact() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    team: "",
+    message: "",
+  });
+
   const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMouseMove = (e: { clientX: number; clientY: number }) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (headerRef.current) {
         const rect = headerRef.current.getBoundingClientRect();
         setMousePosition({
@@ -22,35 +29,29 @@ export default function Contact() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      team: (form.elements.namedItem("team") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
-        .value,
-    };
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    try {
-      // Example POST request to your email backend or service like EmailJS / Nodemailer
-      await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      alert("Message sent successfully!");
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      alert("Failed to send message. Please try again.");
-    }
+  const createMailtoLink = () => {
+    const subject = encodeURIComponent("Contact Form Submission");
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nTeam: ${formData.team}\n\nMessage:\n${formData.message}`
+    );
+    return `mailto:community@geekroom.in?subject=${subject}&body=${body}`;
   };
 
   return (
-    <section className="relative mx-auto w-full md:max-w-6xl py-10 md:py-16 px-4 md:px-8 lg:px-2 bg-transparent">
-      {/* Glowing Backgrounds */}
+    <section
+      id="contact"
+      className="relative mx-auto w-full md:max-w-6xl py-10 md:py-16 px-4 md:px-8 lg:px-2 rounded-md"
+      style={{
+        background: `linear-gradient(135deg, transparent, #1a1a1a, transparent)`,
+      }}
+    >
+      {/* Glowing Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-purple-400 blur-3xl opacity-10"></div>
         <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-pink-400 blur-3xl opacity-10"></div>
@@ -67,28 +68,27 @@ export default function Contact() {
           }}
         >
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400 drop-shadow-md mb-10 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-black via-white to-transparent drop-shadow-md mb-10 text-center">
             Contact Us
           </h2>
 
           {/* Contact Form */}
-          <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
+          <form className="grid grid-cols-1 gap-6">
             {/* Name */}
             <div className="relative">
               <input
                 type="text"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder=" "
                 className="peer w-full rounded-lg bg-transparent py-4 pl-12 pr-4 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
                 required
               />
-              <label
-                htmlFor="name"
-                className="absolute left-12 top-4 text-white text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-focus:top-1 peer-focus:text-xs peer-focus:text-white select-none"
-              >
+              <label className="absolute left-12 top-4 text-white text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-focus:top-1 peer-focus:text-xs peer-focus:text-white">
                 Your Name
               </label>
-              <FaUser className="absolute left-4 top-4 text-white/70 pointer-events-none" />
+              <FaUser className="absolute left-4 top-4 text-white/70" />
             </div>
 
             {/* Email */}
@@ -96,17 +96,16 @@ export default function Contact() {
               <input
                 type="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder=" "
                 className="peer w-full rounded-lg bg-transparent py-4 pl-12 pr-4 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
                 required
               />
-              <label
-                htmlFor="email"
-                className="absolute left-12 top-4 text-white text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-focus:top-1 peer-focus:text-xs peer-focus:text-white select-none"
-              >
+              <label className="absolute left-12 top-4 text-white text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-focus:top-1 peer-focus:text-xs peer-focus:text-white">
                 Your Email
               </label>
-              <FaEnvelopeOpenText className="absolute left-4 top-4 text-white/70 pointer-events-none" />
+              <FaEnvelopeOpenText className="absolute left-4 top-4 text-white/70" />
             </div>
 
             {/* Team Name */}
@@ -114,13 +113,12 @@ export default function Contact() {
               <input
                 type="text"
                 name="team"
+                value={formData.team}
+                onChange={handleChange}
                 placeholder=" "
                 className="peer w-full rounded-lg bg-transparent py-4 pl-4 pr-4 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
               />
-              <label
-                htmlFor="team"
-                className="absolute left-4 top-4 text-white text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-focus:top-1 peer-focus:text-xs peer-focus:text-white select-none"
-              >
+              <label className="absolute left-4 top-4 text-white text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-focus:top-1 peer-focus:text-xs peer-focus:text-white">
                 Team Name
               </label>
             </div>
@@ -129,26 +127,25 @@ export default function Contact() {
             <div className="relative">
               <textarea
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows={5}
                 placeholder=" "
                 className="peer w-full rounded-lg bg-transparent py-4 px-4 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-purple-400 transition resize-none"
                 required
               />
-              <label
-                htmlFor="message"
-                className="absolute left-4 top-4 text-white text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-focus:top-1 peer-focus:text-xs peer-focus:text-white select-none"
-              >
+              <label className="absolute left-4 top-4 text-white text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-focus:top-1 peer-focus:text-xs peer-focus:text-white">
                 Your Message
               </label>
             </div>
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              className="bg-gradient-to-r  via-pink-700 text-white font-bold py-4 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            <a
+              href={createMailtoLink()}
+              className="bg-gradient-to-r from-black via-white to-transparent text-pink-500 font-bold py-4 text-lg md:text-xl rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 text-center"
             >
               Send Message
-            </button>
+            </a>
           </form>
         </div>
       </div>
